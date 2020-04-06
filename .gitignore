@@ -1,0 +1,7 @@
+.idea
+bin
+node_modules
+build
+npm-debug.log
+.DS_Store
+dist
