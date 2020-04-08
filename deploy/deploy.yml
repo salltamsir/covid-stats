@@ -36,7 +36,9 @@
       ignore_errors: yes
     - name: Install packages based on package.json.
       npm:
-        path: {{ release_path }}
+        path: "{{ release_path }}"
+      become: true
+
     - name: Start pm2
       command: pm2 start npm -- run dev --name myapp
     - name: Delete old dir
