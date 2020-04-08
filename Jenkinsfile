@@ -6,5 +6,13 @@ pipeline {
                 sh 'npm install' 
             }
         }
+
+        stage('Deploy') { 
+            steps {
+                sh 'ansible-playbook deploy/deploy.yml' 
+            }
+        }
+
+        
     }
 }
