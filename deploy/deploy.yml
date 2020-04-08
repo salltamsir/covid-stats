@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   vars:
-    project_path: /home/salltamsirousmane/nodeapp
+    project_path: /home/tamsir/nodeapp
   tasks:
     - name: Set some variable
       set_fact:
