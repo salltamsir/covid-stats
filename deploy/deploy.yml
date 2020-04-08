@@ -37,10 +37,11 @@
     - name: Install packages based on package.json.
       npm:
         path: "{{ release_path }}"
-      become: true
+      become: yes
 
     - name: Start pm2
       command: pm2 start npm -- run dev --name myapp
     - name: Delete old dir
       shell: rm -rf {{ current_release_path.stdout }}/
       when: current_release_path.stdout != current_path
+      become: yes
