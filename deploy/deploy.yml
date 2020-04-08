@@ -32,8 +32,11 @@
         dest={{ current_path }}
         state=link
     - name: Delete old pm2 process
-      command: pm2 delete ws-node
+      command: pm2 delete myapp
       ignore_errors: yes
+    - name: Install packages based on package.json.
+      npm:
+        path: {{ release_path }}
     - name: Start pm2
       command: pm2 start npm -- run dev --name myapp
     - name: Delete old dir
