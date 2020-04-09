@@ -9,7 +9,7 @@ pipeline {
 
         stage('Deploy') { 
             steps {
-                sh 'ansible-playbook deploy/deploy.yml' 
+                sh 'ansible-playbook deploy/deploy.yml --extra-vars "ansible_ssh_user=tamsir"' 
             }
         }
 
