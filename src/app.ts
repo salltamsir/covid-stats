@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 
 import env from './config/env';
 import {headersAllow} from "./api/utils/utils";
+import usersRouter from './api/routes/userRoute';
+
 
 const bodyParser = require('body-parser');
 
@@ -15,6 +17,7 @@ app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit: 50
 //json middleware
 app.use(express.json());
 
+app.use('/users', usersRouter);
 
 
 //Connect to db
